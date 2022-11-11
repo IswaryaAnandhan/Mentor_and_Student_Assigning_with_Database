@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const mongodb = require("mongodb");
 const mongoclient = mongodb.MongoClient;
-
-const URL = "mongodb+srv://admin:admin12@cluster0.zfiwcbb.mongodb.net/?retryWrites=true&w=majority";
+const dotenv = require("dotenv").config();
+const URL =process.env.DB;
 app.use(express.json());
 let mentor = [];
 let student = [];
