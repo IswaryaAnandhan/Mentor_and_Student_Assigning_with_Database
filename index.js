@@ -7,6 +7,14 @@ const URL =process.env.DB;
 app.use(express.json());
 let mentor = [];
 let student = [];
+
+ 
+  app.get('/', (req, res) => {
+    res.status(200).json({
+      message: 'Welcome to Mentor and Student assigning with database'
+    });
+  });
+
 app.post("/create_mentor", async (req, res) => {
   try {
     const connection = await mongoclient.connect(URL);
